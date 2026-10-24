@@ -17,7 +17,8 @@
     "kategorije": [
       "umetnici"
     ],
-    "fotografija_groba": "assets/grobna-mesta/zivka-matic-grob.jpg"
+    "fotografija_groba": "assets/grobna-mesta/zivka-matic-grob.jpg",
+    "model_3d": "assets/3d/zivka-matic-grob.glb"
   },
   {
     "id": "stojan-stojancic-pavlovic",
@@ -25,7 +26,7 @@
     "ime_lat": "Stojan–Stojančić Pavlović",
     "zanimanje": "Трговац дуваном, председник пожаревачке општине и народни посланик",
     "zanimanje_lat": "Trgovac duvanom, predsednik požarevačke opštine i narodni poslanik",
-    "godine": "1835–1919",
+    "godine": "1835–непознато",
     "biografija": "Стојан–Стојанчић Павловић рођен је 1835. године у селу Кисиљеву. Трговином дуваном, вођен вредноћом, предузимљивошћу и штедљивошћу, постепено је изградио углед и заузео значајно место у друштвеном животу Пожаревца. Био је ожењен Босом, кћерком среског начелника Анте Павловића и праунуком вожда Карађорђа. Два пута је биран за председника пожаревачке општине, од 1881. до 1882. и од 1896. до 1898. године. Био је и народни посланик као представник Напредњачке странке. Током јавног рада, заједно са инжењером Далековићем покренуо је радове на изградњи насипа за одбрану од поплава Мораве, организовао калдрмисање улица и уређење градског парка. Био је на челу Одбора за подизање споменика књазу Милошу Обреновићу. Био је отац Данице Павловић–Барили и деда сликарке Милене Павловић–Барили. Породично наслеђе Павловића оставило је траг у културном, јавном и хуманитарном животу Пожаревца.",
     "biografija_lat": "Stojan–Stojančić Pavlović rođen je 1835. godine u selu Kiseljevu. Trgovinom duvanom, vođen vrednoćom, preduzimljivošću i štedljivošću, postepeno je izgradio ugled i zauzeo značajno mesto u društvenom životu Požarevca. Bio je oženjen Bosom, kćerkom sreskog načelnika Ante Pavlovića i praunukom vožda Karađorđa. Dva puta je biran za predsednika požarevačke opštine, od 1881. do 1882. i od 1896. do 1898. godine. Bio je i narodni poslanik kao predstavnik Naprednjačke stranke. Tokom javnog rada, zajedno sa inženjerom Dalekovićem pokrenuo je radove na izgradnji nasipa za odbranu od poplava Morave, organizovao kaldrmisanje ulica i uređenje gradskog parka. Bio je na čelu Odbora za podizanje spomenika knezu Milošu Obrenoviću. Bio je otac Danice Pavlović–Barili i deda slikarke Milene Pavlović–Barili. Porodično nasleđe Pavlovića ostavilo je trag u kulturnom, javnom i humanitarnom životu Požarevca.",
     "parcela": "7",
@@ -38,7 +39,7 @@
       "politicari",
       "privrednici"
     ],
-    "fotografija_groba": "assets/grobna-mesta/Pavlovic-grob.jpeg"
+    "fotografija_groba": "assets/grobna-mesta/Stojan-Pavlovic-grob.jpg"
   },
   {
     "id": "dimitrije-mita-sapinac",
@@ -187,7 +188,8 @@
       "politicari",
       "privrednici"
     ],
-    "fotografija_groba": ""
+    "fotografija_groba": "",
+    "model_3d": "assets/3d/jovan-jovanovic-joska-grob.glb"
   },
   {
     "id": "mihailo-dusmanic",
@@ -251,7 +253,7 @@
       "advokati",
       "politicari"
     ],
-    "fotografija_groba": ""
+    "fotografija_groba": "assets/grobna-mesta/Branko-Ivosevic-grob.jpg"
   },
   {
     "id": "dr-nikola-hadzi-nikolic",
@@ -293,7 +295,8 @@
       "dobrotvori",
       "privrednici"
     ],
-    "fotografija_groba": ""
+    "fotografija_groba": "assets/grobna-mesta/milutin-obradovic-grob.jpg",
+    "model_3d": "assets/3d/milutin-obradovic-grob.glb"
   },
   {
     "id": "mihailo-krstic",
@@ -335,7 +338,7 @@
     "kategorije": [
       "privrednici"
     ],
-    "fotografija_groba": ""
+    "fotografija_groba": "assets/grobna-mesta/Zivorad-Zika-Petrovic-grob.jpeg"
   },
   {
     "id": "vladimir-sukljevic",
@@ -540,7 +543,8 @@
     "kategorije": [
       "prosvetni"
     ],
-    "fotografija_groba": ""
+    "fotografija_groba": "assets/grobna-mesta/vladan-popovic-sulja-grob.jpg",
+    "model_3d": "assets/3d/vladan-popovic-sulja-grob.glb"
   },
   {
     "id": "dr-sava-dimitrijevic",
@@ -602,7 +606,7 @@
       "privrednici",
       "politicari"
     ],
-    "fotografija_groba": "assets/grobna-mesta/Nikolajevic-Aleksandar-grob"
+    "fotografija_groba": "assets/grobna-mesta/Nikolajevic-Aleksandar-grob.jpg"
   },
   {
     "zanimanje": "Трговац извозник, председник општине и добротвор",
@@ -684,5 +688,26 @@
       "istorija",
       "javne-licnosti"
     ]
+  },
+  {
+    "id": "draza-markovic",
+    "ime": "Дража Марковић",
+    "ime_lat": "Draža Marković",
+    "zanimanje": "Јавна личност",
+    "zanimanje_lat": "Javna ličnost",
+    "godine": "",
+    "biografija": "За Дражу Марковића за сада немамо опширнију биографију. Профил је отворен ради евидентирања гробног места и његовог 3D приказа. Биографски подаци биће допуњени када буду доступни поуздани извори.",
+    "biografija_lat": "Za Dražu Markovića za sada nemamo opširniju biografiju. Profil je otvoren radi evidentiranja grobnog mesta i njegovog 3D prikaza. Biografski podaci biće dopunjeni kada budu dostupni pouzdani izvori.",
+    "grobno_mesto": "",
+    "izvori": "Podatak o grobnom mestu i 3D model dostavio korisnik; biografski podaci nisu dostavljeni.",
+    "lat": null,
+    "lon": null,
+    "fotografija": "",
+    "parcela": "",
+    "kategorije": [
+      "javne-licnosti"
+    ],
+    "fotografija_groba": "",
+    "model_3d": "assets/3d/draza-markovic-grob.glb"
   }
 ]
