@@ -25,7 +25,7 @@
     "ime_lat": "Stojan–Stojančić Pavlović",
     "zanimanje": "Трговац дуваном, председник пожаревачке општине и народни посланик",
     "zanimanje_lat": "Trgovac duvanom, predsednik požarevačke opštine i narodni poslanik",
-    "godine": "1835–непознато",
+    "godine": "1835–1919",
     "biografija": "Стојан–Стојанчић Павловић рођен је 1835. године у селу Кисиљеву. Трговином дуваном, вођен вредноћом, предузимљивошћу и штедљивошћу, постепено је изградио углед и заузео значајно место у друштвеном животу Пожаревца. Био је ожењен Босом, кћерком среског начелника Анте Павловића и праунуком вожда Карађорђа. Два пута је биран за председника пожаревачке општине, од 1881. до 1882. и од 1896. до 1898. године. Био је и народни посланик као представник Напредњачке странке. Током јавног рада, заједно са инжењером Далековићем покренуо је радове на изградњи насипа за одбрану од поплава Мораве, организовао калдрмисање улица и уређење градског парка. Био је на челу Одбора за подизање споменика књазу Милошу Обреновићу. Био је отац Данице Павловић–Барили и деда сликарке Милене Павловић–Барили. Породично наслеђе Павловића оставило је траг у културном, јавном и хуманитарном животу Пожаревца.",
     "biografija_lat": "Stojan–Stojančić Pavlović rođen je 1835. godine u selu Kiseljevu. Trgovinom duvanom, vođen vrednoćom, preduzimljivošću i štedljivošću, postepeno je izgradio ugled i zauzeo značajno mesto u društvenom životu Požarevca. Bio je oženjen Bosom, kćerkom sreskog načelnika Ante Pavlovića i praunukom vožda Karađorđa. Dva puta je biran za predsednika požarevačke opštine, od 1881. do 1882. i od 1896. do 1898. godine. Bio je i narodni poslanik kao predstavnik Naprednjačke stranke. Tokom javnog rada, zajedno sa inženjerom Dalekovićem pokrenuo je radove na izgradnji nasipa za odbranu od poplava Morave, organizovao kaldrmisanje ulica i uređenje gradskog parka. Bio je na čelu Odbora za podizanje spomenika knezu Milošu Obrenoviću. Bio je otac Danice Pavlović–Barili i deda slikarke Milene Pavlović–Barili. Porodično nasleđe Pavlovića ostavilo je trag u kulturnom, javnom i humanitarnom životu Požarevca.",
     "parcela": "7",
@@ -602,7 +602,7 @@
       "privrednici",
       "politicari"
     ],
-    "fotografija_groba": ""
+    "fotografija_groba": "assets/grobna-mesta/Nikolajevic-Aleksandar-grob"
   },
   {
     "zanimanje": "Трговац извозник, председник општине и добротвор",
