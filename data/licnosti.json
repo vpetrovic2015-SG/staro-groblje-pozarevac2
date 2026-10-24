@@ -161,7 +161,7 @@
     "izvori": "Tekst dostavio korisnik; proveriti istorijske i pravne navode pre javnog objavljivanja.",
     "lat": 44.631031,
     "lon": 21.179588,
-    "fotografija": "",
+    "fotografija": "assets/licnosti/dusan-vujicic.jpg",
     "parcela": "5",
     "kategorije": [
       "politicari"
@@ -181,7 +181,7 @@
     "izvori": "Tekst dostavio korisnik; proveriti datume, funkcije i detalje internacije u pouzdanim izvorima.",
     "lat": 44.62988,
     "lon": 21.178861,
-    "fotografija": "",
+    "fotografija": "assets/licnosti/jovan-jovanovic-joska.jpg",
     "parcela": "6",
     "kategorije": [
       "politicari",
@@ -225,7 +225,7 @@
     "lat": 44.630306,
     "lon": 21.180745,
     "izvori": "Biografske podatke dostavio korisnik; potrebno je proveriti prema dostupnim arhivskim i javnim izvorima.",
-    "fotografija": "",
+    "fotografija": "assets/licnosti/miomir-mica-ilic.jpg",
     "kategorije": [
       "politicari",
       "privrednici"
@@ -434,7 +434,7 @@
     "lat": 44.629843,
     "lon": 21.178906,
     "izvori": "Биографија и подаци о гробном месту достављени од корисника.",
-    "fotografija": "",
+    "fotografija": "assets/licnosti/petar-tamburas.jpg",
     "kategorije": [
       "politicari",
       "privrednici",
@@ -516,7 +516,7 @@
     "lat": 44.630031,
     "lon": 21.179485,
     "izvori": "Биографија и подаци о гробном месту достављени од корисника.",
-    "fotografija": "",
+    "fotografija": "assets/licnosti/bora-spuzic-kvaka.jpg",
     "kategorije": [
       "umetnici"
     ],
@@ -536,7 +536,7 @@
     "lat": 44.629747,
     "lon": 21.180384,
     "izvori": "Биографија и подаци о гробном месту достављени од корисника.",
-    "fotografija": "",
+    "fotografija": "assets/licnosti/vladan-popovic-sulja.jpg",
     "kategorije": [
       "prosvetni"
     ],
@@ -597,7 +597,7 @@
     "lat": 44.62928,
     "lon": 21.18019,
     "izvori": "Биографија и подаци о гробном месту достављени од корисника.",
-    "fotografija": "",
+    "fotografija": "assets/licnosti/aleksandar-s-nikolaevic.jpg",
     "kategorije": [
       "privrednici",
       "politicari"
@@ -646,57 +646,6 @@
       "privrednici",
       "politicari",
       "dobrotvori"
-    ]
-  },
-  {
-    "id": "aleksandar-nikolaјevic",
-    "ime": "Александар Николајевић",
-    "ime_lat": "Aleksandar Nikolajević",
-    "zanimanje": "Личност из историје Пожаревца",
-    "zanimanje_lat": "Ličnost iz istorije Požarevca",
-    "godine": "",
-    "biografija": "Портрет је достављен за каталог знаменитих личности Старог гробља у Пожаревцу. Биографски подаци и гробно место биће допуњени када буду достављени.",
-    "biografija_lat": "Portret je dostavljen za katalog znamenitih ličnosti Starog groblja u Požarevcu. Biografski podaci i grobno mesto biće dopunjeni kada budu dostavljeni.",
-    "grobno_mesto": "",
-    "parcela": "",
-    "fotografija": "assets/licnosti/aleksandar-nikolaјevic.jpg",
-    "fotografija_groba": "",
-    "kategorije": [
-      "istorija"
-    ]
-  },
-  {
-    "id": "jovan-jovanovic-joska",
-    "ime": "Јован Јовановић – Јошка",
-    "ime_lat": "Jovan Jovanović – Joška",
-    "zanimanje": "Личност из историје Пожаревца",
-    "zanimanje_lat": "Ličnost iz istorije Požarevca",
-    "godine": "",
-    "biografija": "Портрет је достављен за каталог знаменитих личности Старог гробља у Пожаревцу. Биографски подаци и гробно место биће допуњени када буду достављени.",
-    "biografija_lat": "Portret je dostavljen za katalog znamenitih ličnosti Starog groblja u Požarevcu. Biografski podaci и гробно место биће допуњени када буду достављени.",
-    "grobno_mesto": "",
-    "parcela": "",
-    "fotografija": "assets/licnosti/jovan-jovanovic-joska.jpg",
-    "fotografija_groba": "",
-    "kategorije": [
-      "istorija"
-    ]
-  },
-  {
-    "id": "pera-tamburas",
-    "ime": "Петар Петровић – Тамбураш",
-    "ime_lat": "Petar Petrović – Tamburaš",
-    "zanimanje": "Музичар",
-    "zanimanje_lat": "Muzičar",
-    "godine": "",
-    "biografija": "Портрет је достављен за каталог знаменитих личности Старог гробља у Пожаревцу. Биографски подаци и гробно место биће допуњени када буду достављени.",
-    "biografija_lat": "Portret je dostavljen za katalog znamenitih ličnosti Starog groblja u Požarevcu. Biografski podaci i grobno mesto biće dopunjeni kada budu dostavljeni.",
-    "grobno_mesto": "",
-    "parcela": "",
-    "fotografija": "assets/licnosti/pera-tamburas.jpg",
-    "fotografija_groba": "",
-    "kategorije": [
-      "umetnici"
     ]
   },
   {
