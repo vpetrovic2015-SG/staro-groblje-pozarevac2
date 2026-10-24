@@ -1,4 +1,7 @@
-const DATA_URL = "data/licnosti.json";
+// Resolve data relative to this deployed site, including GitHub Pages project URLs.
+const APP_BASE = new URL("./", document.baseURI);
+const DATA_URL = new URL("data/licnosti.json", APP_BASE).href;
+const assetUrl = path => path ? new URL(String(path).replace(/^\.\//, ""), APP_BASE).href : "";
 let people = [], selectedId = null, script = "cir", mapInstance = null, mapMarkers = [];
 const $ = id => document.getElementById(id);
 const T = {
@@ -12,7 +15,7 @@ function bioOf(p){return script==="lat"?(p.biografija_lat||p.biografija):(p.biog
 function tr(k){return T[script][k]||T.cir[k]||k}
 function setLanguage(lang){script=lang;document.documentElement.lang=lang==="lat"?"sr-Latn":"sr-Cyrl";document.querySelectorAll("[data-lang]").forEach(b=>b.classList.toggle("active",b.dataset.lang===lang));document.querySelectorAll("[data-t]").forEach(el=>{const k=el.dataset.t;if(T[lang][k])el.textContent=T[lang][k]});$("searchInput").placeholder=tr("searchPlaceholder");$("categoryFilter").options[0].textContent=tr("allCategories");renderList();if(selectedId)showProfile(selectedId);refreshMapPopups()}
 function categoryName(c){return T[script].categoryLabels?.[c]||c}
-function photoMarkup(path,alt,cls=""){return path?`<img class="${cls}" src="${escapeAttr(path)}" alt="${escapeAttr(alt)}" loading="lazy" onerror="this.style.display='none'">`:`<div class="no-photo" aria-label="${escapeAttr(alt)}">✦</div>`}
+function photoMarkup(path,alt,cls=""){return path?`<img class="${cls}" src="${escapeAttr(assetUrl(path))}" alt="${escapeAttr(alt)}" loading="lazy" onerror="this.onerror=null;this.alt='Фотографија није пронађена';this.style.background='#f5d7d7'">`:`<div class="no-photo" aria-label="${escapeAttr(alt)}">✦</div>`}
 function escapeHtml(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
 function escapeAttr(s){return escapeHtml(s).replace(/`/g,"&#96;")}
 function renderList(){
@@ -30,7 +33,7 @@ function showProfile(id){
  const p=people.find(x=>x.id===id);if(!p)return;selectedId=id;renderList();
  const meta=[];if(p.godine)meta.push(`<span class="meta-pill">${escapeHtml(p.godine)}</span>`);if(p.parcela)meta.push(`<span class="meta-pill">${tr("parcel")}: ${escapeHtml(p.parcela)}</span>`);if(p.grobno_mesto)meta.push(`<span class="meta-pill">${tr("graveNo")}: ${escapeHtml(p.grobno_mesto)}</span>`);
  const mapRoute=(p.lat&&p.lon)?`https://www.google.com/maps/dir/?api=1&destination=${p.lat},${p.lon}`:"";
- $("profileContent").innerHTML=`<div class="profile-top"><div>${p.fotografija?`<img class="profile-portrait" src="${escapeAttr(p.fotografija)}" alt="${escapeAttr(nameOf(p))}">`:`<div class="portrait-placeholder">✦</div>`}</div><div><div class="profile-eyebrow">${escapeHtml(jobOf(p)||tr("occupation"))}</div><h2 class="profile-name">${escapeHtml(nameOf(p))}</h2><p class="profile-role">${escapeHtml(jobOf(p)||"")}</p><div class="profile-meta">${meta.join("")}</div><div class="profile-actions">${mapRoute?`<a class="small-btn" target="_blank" rel="noopener" href="${mapRoute}">↗ ${tr("openRoute")}</a>`:""}<button class="small-btn" id="copyProfile">⧉ ${tr("share")}</button></div></div></div>
+ $("profileContent").innerHTML=`<div class="profile-top"><div>${p.fotografija?`<img class="profile-portrait" src="${escapeAttr(assetUrl(p.fotografija))}" alt="${escapeAttr(nameOf(p))}">`:`<div class="portrait-placeholder">✦</div>`}</div><div><div class="profile-eyebrow">${escapeHtml(jobOf(p)||tr("occupation"))}</div><h2 class="profile-name">${escapeHtml(nameOf(p))}</h2><p class="profile-role">${escapeHtml(jobOf(p)||"")}</p><div class="profile-meta">${meta.join("")}</div><div class="profile-actions">${mapRoute?`<a class="small-btn" target="_blank" rel="noopener" href="${mapRoute}">↗ ${tr("openRoute")}</a>`:""}<button class="small-btn" id="copyProfile">⧉ ${tr("share")}</button></div></div></div>
  <div class="profile-tabs" role="tablist"><button class="tab active" data-tab="bio">${tr("bio")}</button><button class="tab" data-tab="photos">${tr("photos")}</button><button class="tab" data-tab="grave">${tr("grave")}</button><button class="tab" data-tab="model">${tr("model")}</button><button class="tab" data-tab="qr">${tr("qr")}</button></div><div class="tab-content" id="tabContent">${bioPanel(p)}</div>`;
  $("profileContent").querySelectorAll("[data-tab]").forEach(b=>b.addEventListener("click",()=>activateTab(p,b.dataset.tab)));
  $("copyProfile").addEventListener("click",async()=>{try{await navigator.clipboard.writeText(profileUrl(p));$("copyProfile").textContent="✓ "+tr("copyDone")}catch(e){prompt("Копирајте линк профила:",profileUrl(p))}});
@@ -43,13 +46,13 @@ function activateTab(p,tab){
  if(tab==="bio")el.innerHTML=bioPanel(p);
  if(tab==="photos"){
   const pics=[];if(p.fotografija)pics.push([p.fotografija,nameOf(p)]);if(p.fotografija_groba)pics.push([p.fotografija_groba,tr("grave")]);
-  el.innerHTML=pics.length?`<div class="photo-gallery">${pics.map(([src,cap])=>`<figure><a href="${escapeAttr(src)}" target="_blank" rel="noopener"><img src="${escapeAttr(src)}" alt="${escapeAttr(cap)}"></a><figcaption>${escapeHtml(cap)}</figcaption></figure>`).join("")}</div>`:`<p>${tr("noPhotos")}</p>`;
+  el.innerHTML=pics.length?`<div class="photo-gallery">${pics.map(([src,cap])=>`<figure><a href="${escapeAttr(assetUrl(src))}" target="_blank" rel="noopener"><img src="${escapeAttr(assetUrl(src))}" alt="${escapeAttr(cap)}"></a><figcaption>${escapeHtml(cap)}</figcaption></figure>`).join("")}</div>`:`<p>${tr("noPhotos")}</p>`;
  }
  if(tab==="grave"){
-  el.innerHTML=`<h3>${tr("grave")}</h3>${p.parcela||p.grobno_mesto?`<p>${p.parcela?`${tr("parcel")}: <b>${escapeHtml(p.parcela)}</b>`:""} ${p.grobno_mesto?` · ${tr("graveNo")}: <b>${escapeHtml(p.grobno_mesto)}</b>`:""}</p>`:`<p>${tr("noCoords")}</p>`}${p.fotografija_groba?`<div class="photo-gallery"><figure><a href="${escapeAttr(p.fotografija_groba)}" target="_blank"><img src="${escapeAttr(p.fotografija_groba)}" alt="${tr("grave")}"></a><figcaption>${tr("grave")}</figcaption></figure></div>`:`<p>${tr("noGravePhoto")}</p>`}${p.lat&&p.lon?`<p><a class="small-btn" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=${p.lat},${p.lon}">↗ ${tr("openRoute")}</a></p>`:""}`;
+  el.innerHTML=`<h3>${tr("grave")}</h3>${p.parcela||p.grobno_mesto?`<p>${p.parcela?`${tr("parcel")}: <b>${escapeHtml(p.parcela)}</b>`:""} ${p.grobno_mesto?` · ${tr("graveNo")}: <b>${escapeHtml(p.grobno_mesto)}</b>`:""}</p>`:`<p>${tr("noCoords")}</p>`}${p.fotografija_groba?`<div class="photo-gallery"><figure><a href="${escapeAttr(assetUrl(p.fotografija_groba))}" target="_blank"><img src="${escapeAttr(assetUrl(p.fotografija_groba))}" alt="${tr("grave")}" onerror="this.onerror=null;this.style.background='#f5d7d7';this.style.minHeight='120px'"></a><figcaption>${tr("grave")}</figcaption></figure></div>`:`<p>${tr("noGravePhoto")}</p>`}${p.lat&&p.lon?`<p><a class="small-btn" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=${p.lat},${p.lon}">↗ ${tr("openRoute")}</a></p>`:""}`;
  }
  if(tab==="model"){
-  el.innerHTML=p.model_3d?`<h3>${tr("model")}</h3><model-viewer class="model-view" src="${escapeAttr(p.model_3d)}" camera-controls auto-rotate shadow-intensity="1" exposure="1" alt="3D модел"></model-viewer><p class="map-note">Користите миш или прст за окретање модела.</p>`:`<div class="model-missing"><h3>${tr("model")}</h3><p>${tr("noModel")}</p></div>`;
+  el.innerHTML=p.model_3d?`<h3>${tr("model")}</h3><model-viewer class="model-view" src="${escapeAttr(assetUrl(p.model_3d))}" camera-controls auto-rotate shadow-intensity="1" exposure="1" alt="3D модел"></model-viewer><p class="map-note">Користите миш или прст за окретање модела.</p>`:`<div class="model-missing"><h3>${tr("model")}</h3><p>${tr("noModel")}</p></div>`;
  }
  if(tab==="qr"){
   el.innerHTML=`<h3>${tr("qr")}</h3><div class="qr-wrap"><div class="qr-box" id="qrCode"></div><p class="qr-help">${tr("qrHint")}<br><br><a href="${escapeAttr(profileUrl(p))}" target="_blank" rel="noopener">${escapeHtml(nameOf(p))}</a></p></div>`;
@@ -82,6 +85,17 @@ async function start(){
   $("menuToggle").addEventListener("click",()=>$("mainNav").classList.toggle("open"));
   $("mainNav").querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>$("mainNav").classList.remove("open")));
   const hash=decodeURIComponent(location.hash.replace(/^#licnost=/,""));if(hash&&people.some(p=>p.id===hash))showProfile(hash);
- }catch(err){$("peopleList").innerHTML='<p class="no-results">Каталог није учитан. Проверите да ли датотека data/licnosti.json постоји у репозиторијуму.</p>';console.error(err)}
+ }catch(err){
+  console.error("Грешка при учитавању каталога:", err);
+  const message = "Каталог није учитан. Проверите да ли је фасцикла data са датотеком licnosti.json постављена поред index.html. Путања: " + DATA_URL;
+  if ($("peopleList")) $("peopleList").innerHTML = '<p class="no-results">' + escapeHtml(message) + '</p>';
+  if ($("profileContent")) $("profileContent").innerHTML = '<div class="empty-profile"><span class="empty-icon">!</span><h3>Подаци нису учитани</h3><p>' + escapeHtml(message) + '</p></div>';
+  if ($("modelsOverview")) $("modelsOverview").innerHTML = '<p>' + escapeHtml(message) + '</p>';
+  const status = document.createElement("div");
+  status.className = "load-error-banner";
+  status.textContent = message;
+  status.setAttribute("role","alert");
+  document.body.prepend(status);
+}
 }
 start();
