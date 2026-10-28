@@ -18,7 +18,7 @@
       "umetnici"
     ],
     "fotografija_groba": "assets/grobna mesta/zivka-matic-grob.jpg",
-    "model_3d": "assets/3d/zivka-matic-grob.glb"
+    "model_3d": "assets/3d/vladan-popovic-sulja-grob.glb"
   },
   {
     "id": "stojan-stojancic-pavlovic",
@@ -544,7 +544,7 @@
       "prosvetni"
     ],
     "fotografija_groba": "assets/grobna mesta/vladan-popovic-sulja-grob.jpg",
-    "model_3d": "assets/3d/vladan-popovic-sulja-grob.glb"
+    "model_3d": "assets/3d/zivka-matic-grob.glb"
   },
   {
     "id": "dr-sava-dimitrijevic",
