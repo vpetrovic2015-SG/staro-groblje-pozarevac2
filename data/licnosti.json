@@ -17,7 +17,7 @@
     "kategorije": [
       "umetnici"
     ],
-    "fotografija_groba": "assets/grobna-mesta/zivka-matic-grob.jpg",
+    "fotografija_groba": "assets/grobna mesta/zivka-matic-grob.jpg",
     "model_3d": "assets/3d/zivka-matic-grob.glb"
   },
   {
@@ -39,7 +39,7 @@
       "politicari",
       "privrednici"
     ],
-    "fotografija_groba": "assets/grobna-mesta/Stojan-Pavlovic-grob.jpg"
+    "fotografija_groba": "assets/grobna mesta/Stojan-Pavlovic-grob.jpg"
   },
   {
     "id": "dimitrije-mita-sapinac",
@@ -76,7 +76,7 @@
     "lon": 21.180238,
     "izvori": "Текст доставио корисник; историјске податке проверити према поузданим изворима.",
     "fotografija": "assets/licnosti/ignjat-todorovic.jpg",
-    "fotografija_groba": "assets/grobna-mesta/Ignjat-Todorovic-grob.jpeg",
+    "fotografija_groba": "assets/grobna mesta/Ignjat-Todorovic-grob.jpeg",
     "kategorije": [
       "politicari",
       "privrednici"
@@ -147,7 +147,7 @@
       "dobrotvori",
       "privrednici"
     ],
-    "fotografija_groba": "assets/grobna-mesta/Cecelski-grob.jpeg"
+    "fotografija_groba": "assets/grobna mesta/Cecelski-grob.jpeg"
   },
   {
     "id": "dusan-vujicic",
@@ -211,7 +211,7 @@
       "lekari",
       "privrednici"
     ],
-    "fotografija_groba": "assets/grobna-mesta/Dusmanic-grob.jpeg"
+    "fotografija_groba": "assets/grobna mesta/Dusmanic-grob.jpeg"
   },
   {
     "id": "miomir-mica-ilic",
@@ -253,7 +253,7 @@
       "advokati",
       "politicari"
     ],
-    "fotografija_groba": "assets/grobna-mesta/Branko-Ivosevic-grob.jpg"
+    "fotografija_groba": "assets/grobna mesta/Branko-Ivosevic-grob.jpg"
   },
   {
     "id": "dr-nikola-hadzi-nikolic",
@@ -273,7 +273,7 @@
     "kategorije": [
       "lekari"
     ],
-    "fotografija_groba": "assets/grobna-mesta/Hadzi-Nikolic-grob.jpeg"
+    "fotografija_groba": "assets/grobna mesta/Hadzi-Nikolic-grob.jpeg"
   },
   {
     "id": "milutin-obradovic",
@@ -295,7 +295,7 @@
       "dobrotvori",
       "privrednici"
     ],
-    "fotografija_groba": "assets/grobna-mesta/milutin-obradovic-grob.jpg",
+    "fotografija_groba": "assets/grobna mesta/milutin-obradovic-grob.jpg",
     "model_3d": "assets/3d/milutin-obradovic-grob.glb"
   },
   {
@@ -338,7 +338,7 @@
     "kategorije": [
       "privrednici"
     ],
-    "fotografija_groba": "assets/grobna-mesta/Zivorad-Zika-Petrovic-grob.jpeg"
+    "fotografija_groba": "assets/grobna mesta/Zivorad-Zika-Petrovic-grob.jpeg"
   },
   {
     "id": "vladimir-sukljevic",
@@ -543,7 +543,7 @@
     "kategorije": [
       "prosvetni"
     ],
-    "fotografija_groba": "assets/grobna-mesta/vladan-popovic-sulja-grob.jpg",
+    "fotografija_groba": "assets/grobna mesta/vladan-popovic-sulja-grob.jpg",
     "model_3d": "assets/3d/vladan-popovic-sulja-grob.glb"
   },
   {
@@ -606,7 +606,7 @@
       "privrednici",
       "politicari"
     ],
-    "fotografija_groba": "assets/grobna-mesta/Nikolajevic-Aleksandar-grob.jpg"
+    "fotografija_groba": "assets/grobna mesta/Nikolajevic-Aleksandar-grob.jpg"
   },
   {
     "zanimanje": "Трговац извозник, председник општине и добротвор",
@@ -617,7 +617,7 @@
     "lat": null,
     "lon": null,
     "fotografija": "assets/licnosti/belo-savic-iz-pamfleta.jpeg",
-    "fotografija_groba": "assets/grobna-mesta/Belosavic-grob.jpeg",
+    "fotografija_groba": "assets/grobna mesta/Belosavic-grob.jpeg",
     "izvori": "Памфлет „Стари гробљe у Пожаревцу“, одељак о Илији (Белу) Савићу и Станку Бело Савићу; породична гробница Белосавић, парцела 12, гробно место 38. Dodatak o prilogu crkvi i matičnoj grobnici: податак корисника.",
     "id": "ilija-belosavic",
     "ime": "Илија (Бело) Савић",
@@ -639,7 +639,7 @@
     "lat": null,
     "lon": null,
     "fotografija": "",
-    "fotografija_groba": "assets/grobna-mesta/Belosavic-grob.jpeg",
+    "fotografija_groba": "assets/grobna mesta/Belosavic-grob.jpeg",
     "izvori": "Памфлет „Стари гробљe у Пожаревцу“, одељак о Илији (Белу) Савићу и Станку Бело Савићу; породична гробница Белосавић, парцела 12, гробно место 38. Dodatak o prilogu crkvi i matičnoj grobnici: податак корисника.",
     "id": "stanko-belosavic",
     "ime": "Станко Бело Савић",
@@ -707,7 +707,6 @@
     "kategorije": [
       "javne-licnosti"
     ],
-    "fotografija_groba": "",
-    "model_3d": "assets/3d/draza-markovic-grob.glb"
+    "fotografija_groba": ""
   }
 ]
