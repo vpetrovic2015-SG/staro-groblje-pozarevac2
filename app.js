@@ -75,8 +75,36 @@ function fillCategories(){
 }
 function renderModelOverview(){
  const withModels=people.filter(p=>p.model_3d);
- $("modelsOverview").innerHTML=withModels.length?`<div class="photo-gallery">${withModels.map(p=>`<button class="person-row" data-model-person="${escapeAttr(p.id)}">${photoMarkup(p.fotografija,nameOf(p))}<span><strong>${escapeHtml(nameOf(p))}</strong><small>${tr("model")}</small></span></button>`).join("")}</div>`:`<p>${tr("modelHint")}</p>`;
- $("modelsOverview").querySelectorAll("[data-model-person]").forEach(b=>b.onclick=()=>{showProfile(b.dataset.modelPerson);activateTab(people.find(p=>p.id===b.dataset.modelPerson),"model");$("licnosti").scrollIntoView({behavior:"smooth"})});
+ const select=$("studioPersonSelect");
+ if(!withModels.length){$("modelsOverview").innerHTML='<p>'+escapeHtml(tr("modelHint"))+'</p>';return;}
+ select.innerHTML=withModels.map(p=>'<option value="'+escapeAttr(p.id)+'">'+escapeHtml(nameOf(p))+'</option>').join("");
+ select.addEventListener("change",()=>setStudioModel(select.value));
+ $("studioExposure").addEventListener("input",e=>{const value=Number(e.target.value);$("studioViewer").exposure=value;$("studioExposureValue").textContent=value.toFixed(1);});
+ $("studioRotate").addEventListener("change",e=>{if(e.target.checked)$("studioViewer").setAttribute("auto-rotate","");else $("studioViewer").removeAttribute("auto-rotate");});
+ $("studioZoom").addEventListener("input",e=>{const value=Number(e.target.value);$("studioViewer").setAttribute("camera-orbit","0deg 75deg "+value+"%");$("studioZoomValue").textContent=value+"%";});
+ $("studioResetView").addEventListener("click",()=>{
+  $("studioExposure").value="1";$("studioViewer").exposure=1;$("studioExposureValue").textContent="1.0";
+  $("studioRotate").checked=true;$("studioViewer").setAttribute("auto-rotate","");
+  $("studioZoom").value="105";$("studioViewer").setAttribute("camera-orbit","0deg 75deg 105%");$("studioZoomValue").textContent="105%";
+  if($("studioViewer").resetTurntableRotation)$("studioViewer").resetTurntableRotation();
+ });
+ $("studioOpenProfile").addEventListener("click",()=>{const p=people.find(x=>x.id===select.value);if(!p)return;showProfile(p.id);$("licnosti").scrollIntoView({behavior:"smooth"});});
+ setStudioModel(withModels.some(p=>p.id===selectedId)?selectedId:withModels[0].id);
+}
+function setStudioModel(id){
+ const p=people.find(x=>x.id===id&&x.model_3d);if(!p)return;
+ const viewer=$("studioViewer");
+ viewer.src=assetUrl(p.model_3d);viewer.alt="3D модел: "+nameOf(p);$("studioModelTitle").textContent=nameOf(p);
+ const status=$("studioViewerStatus");status.textContent="Учитавање 3D модела…";status.classList.remove("is-hidden");
+ viewer.addEventListener("load",()=>status.classList.add("is-hidden"),{once:true});
+ viewer.addEventListener("error",()=>{status.textContent="Модел није могао да се учита. Проверите доступност датотеке.";status.classList.remove("is-hidden");},{once:true});
+ const place=[];if(p.parcela)place.push("Парцела "+p.parcela);if(p.grobno_mesto)place.push("Гробно место "+p.grobno_mesto);
+ $("studioPersonSummary").innerHTML=(p.fotografija?photoMarkup(p.fotografija,nameOf(p),"studio-person-photo"):"")+
+  '<div class="studio-person-name">'+escapeHtml(nameOf(p))+'</div>'+
+  '<div class="studio-person-job">'+escapeHtml(jobOf(p)||"")+'</div>'+
+  '<div class="studio-grave-data">'+(place.length?escapeHtml(place.join(" · ")):"Подаци о парцели и гробном месту нису унети.")+'</div>'+
+  (p.fotografija_groba?'<a class="studio-grave-photo" href="'+escapeAttr(assetUrl(p.fotografija_groba))+'" target="_blank" rel="noopener">Погледај фотографију гроба ↗</a>':"");
+ $("studioPersonSelect").value=p.id;
 }
 async function start(){
  try{const res=await fetch(DATA_URL);if(!res.ok)throw new Error("HTTP "+res.status);people=await res.json();fillCategories();renderList();initMap();renderModelOverview();
