@@ -8,3 +8,42 @@
 @media(max-width:480px){.brand b{font-size:11px}.brand small{font-size:9px}.brand-mark{font-size:25px}.hero h1{font-size:48px}.hero-lead{font-size:15px}.hero-note{display:none}.people-list{grid-template-columns:1fr}.profile-top{grid-template-columns:1fr}.profile-portrait,.portrait-placeholder{width:150px;height:175px}.profile-name{font-size:34px}.section-head{align-items:flex-start}.count{font-size:27px}.qr-wrap{align-items:flex-start}}
 
 .load-error-banner{position:relative;z-index:2000;background:#7b241c;color:#fff;padding:12px 18px;font-size:13px;text-align:center;overflow-wrap:anywhere}
+
+
+/* Central 3D model studio */
+.model-studio{display:grid;grid-template-columns:minmax(205px,245px) minmax(0,1fr) minmax(205px,245px);gap:14px;align-items:stretch}
+.studio-panel{background:#fffaf2;border:1px solid #ded1bc;padding:20px;min-width:0;box-shadow:0 8px 24px #2b24140a}
+.studio-panel-title{font-size:10px;letter-spacing:.16em;font-weight:800;color:#987640;margin-bottom:18px}
+.studio-picker>label,.studio-control>label{display:flex;justify-content:space-between;gap:8px;font-size:12px;font-weight:700;color:#383229;margin-bottom:10px}
+#studioPersonSelect{width:100%;padding:12px 10px;border:1px solid #d8c7a9;background:#fffdf8;color:#25221c;font:inherit;font-size:12px;min-width:0}
+.studio-person-summary{margin-top:18px}
+.studio-person-photo{width:100%;height:150px;object-fit:cover;object-position:center 25%;border:1px solid #dfd0b5;background:#eee4d4}
+.studio-person-name{font-family:'Cormorant Garamond',Georgia,serif;font-size:25px;line-height:1.05;color:#27231c;margin-top:14px}
+.studio-person-job{font-size:12px;color:#8a744f;margin-top:6px}
+.studio-grave-data{font-size:12px;line-height:1.6;color:#5f574a;margin-top:14px;padding-top:12px;border-top:1px solid #e8dece}
+.studio-grave-photo{display:inline-block;margin-top:12px;font-size:11px;color:#80602e;text-decoration:underline;text-underline-offset:3px}
+.studio-profile-link{margin-top:16px;width:100%;justify-content:center}
+.studio-stage{min-width:0;background:#211f1b;border:1px solid #514533;display:flex;flex-direction:column;box-shadow:0 14px 34px #241e1420}
+.studio-stage-top{display:flex;align-items:center;gap:9px;padding:14px 16px;border-bottom:1px solid #4b4130;color:#f2e5cf;font-size:13px;min-width:0}
+.studio-live-dot{width:7px;height:7px;border-radius:50%;background:#c9a66b;box-shadow:0 0 0 4px #c9a66b22;flex:0 0 auto}
+.studio-stage-label{margin-left:auto;font-size:9px;letter-spacing:.14em;color:#b7a88e;white-space:nowrap}
+.studio-viewer-wrap{position:relative;min-height:470px;flex:1;background:radial-gradient(ellipse at center,#4a4438 0%,#2c2923 50%,#1d1c19 100%);overflow:hidden}
+.studio-viewer{display:block;width:100%;height:100%;min-height:470px;background:transparent;--poster-color:transparent;--progress-bar-color:#c9a66b;--progress-mask:transparent}
+.studio-viewer-status{position:absolute;left:15px;right:15px;bottom:15px;text-align:center;padding:10px 12px;color:#e9dcc5;background:#171613c9;border:1px solid #786647;font-size:12px;pointer-events:none}
+.studio-viewer-status.is-hidden{display:none}
+.studio-stage-footer{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 15px;border-top:1px solid #4b4130;color:#b9ad99;font-size:10px;line-height:1.5}
+.studio-reset{background:transparent;border:1px solid #8e7955;color:#f0dfc0;padding:8px 10px;white-space:nowrap;cursor:pointer;font-size:11px}
+.studio-reset:hover{background:#3a3327}
+.studio-control{padding:16px 0;border-top:1px solid #e6dac7}
+.studio-control:first-of-type{border-top:0;padding-top:0}
+.studio-control output{font-size:11px;color:#987640;font-weight:800}
+.studio-control input[type=range]{width:100%;accent-color:#a98245;cursor:pointer}
+.studio-range-labels{display:flex;justify-content:space-between;font-size:10px;color:#928675;margin-top:2px}
+.studio-check-label{align-items:center!important}
+.studio-check-label input{accent-color:#a98245;width:16px;height:16px}
+.studio-control>p{font-size:11px;line-height:1.55;color:#817767;margin:7px 0 0}
+.studio-hint{display:flex;gap:10px;align-items:flex-start;background:#f4ecde;padding:12px;margin-top:12px;border:1px solid #e8dcc7}
+.studio-hint>span{font-size:18px;color:#b18c4c}
+.studio-hint p{margin:0!important}
+@media(max-width:1100px){.model-studio{grid-template-columns:210px minmax(0,1fr)}.studio-controls{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.studio-controls .studio-panel-title{grid-column:1/-1;margin-bottom:0}.studio-control{border-top:1px solid #e6dac7}.studio-hint{margin-top:0}}
+@media(max-width:760px){.model-studio{grid-template-columns:1fr}.studio-picker{order:0}.studio-stage{order:1}.studio-controls{order:2;grid-column:auto;grid-template-columns:1fr;gap:0}.studio-controls .studio-panel-title{grid-column:auto;margin-bottom:0}.studio-person-summary{display:grid;grid-template-columns:86px minmax(0,1fr);column-gap:14px;align-items:start}.studio-person-photo{grid-row:span 4;width:86px;height:105px}.studio-person-name{font-size:22px;margin-top:0}.studio-grave-data{margin-top:8px;padding-top:8px}.studio-grave-photo{margin-top:8px}.studio-viewer-wrap,.studio-viewer{min-height:340px}.studio-stage-label{font-size:8px}.studio-stage-footer{align-items:flex-start;flex-direction:column}.studio-reset{align-self:flex-end}.studio-controls .studio-hint{margin-top:12px}}
