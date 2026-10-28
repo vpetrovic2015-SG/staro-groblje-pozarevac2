@@ -47,3 +47,11 @@
 .studio-hint p{margin:0!important}
 @media(max-width:1100px){.model-studio{grid-template-columns:210px minmax(0,1fr)}.studio-controls{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.studio-controls .studio-panel-title{grid-column:1/-1;margin-bottom:0}.studio-control{border-top:1px solid #e6dac7}.studio-hint{margin-top:0}}
 @media(max-width:760px){.model-studio{grid-template-columns:1fr}.studio-picker{order:0}.studio-stage{order:1}.studio-controls{order:2;grid-column:auto;grid-template-columns:1fr;gap:0}.studio-controls .studio-panel-title{grid-column:auto;margin-bottom:0}.studio-person-summary{display:grid;grid-template-columns:86px minmax(0,1fr);column-gap:14px;align-items:start}.studio-person-photo{grid-row:span 4;width:86px;height:105px}.studio-person-name{font-size:22px;margin-top:0}.studio-grave-data{margin-top:8px;padding-top:8px}.studio-grave-photo{margin-top:8px}.studio-viewer-wrap,.studio-viewer{min-height:340px}.studio-stage-label{font-size:8px}.studio-stage-footer{align-items:flex-start;flex-direction:column}.studio-reset{align-self:flex-end}.studio-controls .studio-hint{margin-top:12px}}
+
+
+/* Correct upside-down grave photos and the Ignjat Todorovic cover photograph */
+.grave-photo-img{transform:rotate(180deg)}
+.hero{background:#171716!important}
+.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#171716f2 0%,#171716d9 43%,#17171655 100%),url('assets/grobna mesta/Ignjat-Todorovic-grob.jpeg') center 43%/cover no-repeat;transform:rotate(180deg);z-index:0}
+.hero:after{z-index:1}
+.hero-content,.hero-note{z-index:2}
