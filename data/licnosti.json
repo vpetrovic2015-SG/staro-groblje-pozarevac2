@@ -726,13 +726,14 @@
     "parcela": "5",
     "grobno_mesto": "78 N.B",
     "izvori": "Текст биографије и подаци о гробном месту преузети су из достављеног материјала. На натпису породичне гробнице наведени су чланови породице Косте Обрадовића.",
-    "lat": null,
-    "lon": null,
+    "lat": 44.629942,
+    "lon": 21.179474,
     "fotografija": "",
-    "fotografija_groba": "",
+    "fotografija_groba": "assets/grobna-mesta/djordje-arandjelovic-grob.jpg",
     "kategorije": [
       "војна лица"
-    ]
+    ],
+    "model_3d": "assets/3d/djordje-arandjelovic.glb"
   },
   {
     "id": "antonije-pekic",
