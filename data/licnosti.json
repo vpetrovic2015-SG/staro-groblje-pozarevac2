@@ -354,7 +354,7 @@
     "lat": 44.630416,
     "lon": 21.178097,
     "izvori": "Биографија и подаци о гробном месту достављени од корисника.",
-    "fotografija": "",
+    "fotografija": "assets/licnosti/vladimir-sukljevic.jpg",
     "kategorije": [
       "umetnici",
       "prosvetni"
@@ -416,12 +416,18 @@
     "lat": 44.629707,
     "lon": 21.180489,
     "izvori": "Биографија и подаци о гробном месту достављени од корисника.",
-    "fotografija": "",
+    "fotografija": "assets/licnosti/bozidar-dimitrijevic-kozica.jpg",
     "kategorije": [
       "oficiri",
       "politicari"
     ],
-    "fotografija_groba": ""
+    "fotografija_groba": "",
+    "fotografije_dodatne": [
+      {
+        "src": "assets/licnosti/bozidar-dimitrijevic-kozica-ploca.jpg",
+        "opis": "Спомен-плоча Божидару Димитријевићу – Козици"
+      }
+    ]
   },
   {
     "id": "petar-tamburas",
