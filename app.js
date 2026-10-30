@@ -38,7 +38,7 @@ function showProfile(id){
  $("copyProfile").addEventListener("click",async()=>{try{await navigator.clipboard.writeText(profileUrl(p));$("copyProfile").textContent="✓ "+tr("copyDone")}catch(e){prompt("Копирајте линк профила:",profileUrl(p))}});
  history.replaceState(null,"",`#licnost=${encodeURIComponent(id)}`);
 }
-function bioPanel(p){return `<h3>${tr("bio")}</h3><div class="bio-text">${escapeHtml(bioOf(p)||tr("noBio"))}</div>${p.izvori?`<p class="map-note">${escapeHtml(p.izvori)}</p>`:""}`}
+function bioPanel(p){const paragraphs=(bioOf(p)||tr("noBio")).split(/\n\s*\n/).map(x=>`<p>${escapeHtml(x).replace(/\n/g," ")}</p>`).join("");return `<h3>${tr("bio")}</h3><div class="bio-text">${paragraphs}</div>${p.izvori?`<p class="map-note">${escapeHtml(p.izvori)}</p>`:""}`}
 function activateTab(p,tab){
  $("profileContent").querySelectorAll("[data-tab]").forEach(b=>b.classList.toggle("active",b.dataset.tab===tab));
  const el=$("tabContent");
