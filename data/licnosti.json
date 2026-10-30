@@ -695,7 +695,7 @@
     "fotografija": "assets/licnosti/vlajko-stojiljkovic.jpg",
     "fotografija_groba": "",
     "kategorije": [
-      "političari"
+      "oficiri"
     ],
     "lat": 44.630106,
     "lon": 21.179619,
@@ -737,7 +737,7 @@
     "lon": 21.179474,
     "fotografija": "",
     "kategorije": [
-      "војна лица"
+      "oficiri"
     ],
     "fotografija_groba": "assets/grobna-mesta/arandjelovic-grob.jpg",
     "model_3d": "assets/3d/arandjelovic.glb"
@@ -757,7 +757,7 @@
     "fotografija": "assets/licnosti/pekic-porodica.jpg",
     "fotografija_groba": "",
     "kategorije": [
-      "војна лица"
+      "oficiri"
     ]
   },
   {
@@ -776,7 +776,7 @@
     "fotografija": "assets/licnosti/dusan-portret.jpg",
     "fotografija_groba": "assets/grobna-mesta/dusan-grob.jpg",
     "kategorije": [
-      "војна лица"
+      "oficiri"
     ],
     "izvori": "Биографија и фотографије достављене од стране корисника. Наводи о војној служби и превођењу у резерву према достављеном тексту."
   },
@@ -796,7 +796,7 @@
     "fotografija": "",
     "fotografija_groba": "assets/grobna-mesta/simeon-jovanovic-grob.jpg",
     "kategorije": [
-      "војна лица"
+      "oficiri"
     ],
     "izvori": "Биографски текст и фотографија гробног места достављени од стране корисника."
   }
