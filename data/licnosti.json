@@ -419,13 +419,19 @@
     "lat": 44.629707,
     "lon": 21.180489,
     "izvori": "Биографија и подаци о гробном месту достављени од корисника.",
-    "fotografija": "",
+    "fotografija": "assets/licnosti/kozica-portret.jpg",
     "kategorije": [
       "oficiri",
       "politicari"
     ],
     "fotografija_groba": "",
-    "podnaslov": "НАРОДНИ ХЕРОЈ"
+    "podnaslov": "НАРОДНИ ХЕРОЈ",
+    "fotografije_dodatne": [
+      {
+        "src": "assets/licnosti/kozica-ploca.jpg",
+        "opis": "Спомен-плоча Божидару Димитријевићу – Козици"
+      }
+    ]
   },
   {
     "id": "petar-tamburas",
@@ -692,7 +698,8 @@
       "političari"
     ],
     "lat": 44.630106,
-    "lon": 21.179619
+    "lon": 21.179619,
+    "model_3d": "assets/3d/vlajko-stojiljkovic.glb"
   },
   {
     "id": "draza-markovic",
@@ -731,7 +738,9 @@
     "fotografija": "",
     "kategorije": [
       "војна лица"
-    ]
+    ],
+    "fotografija_groba": "assets/grobna-mesta/arandjelovic-grob.jpg",
+    "model_3d": "assets/3d/arandjelovic.glb"
   },
   {
     "id": "antonije-pekic",
@@ -745,7 +754,7 @@
     "parcela": "6",
     "grobno_mesto": "1",
     "izvori": "Биографија и породична фотографија преузете су из материјала који је доставио корисник. У наслову достављеног текста наведене су године 1881–1953, док се у ранијој верзији истог материјала помиње 1960; овде је задржана година 1953. наведена у главном биографском тексту.",
-    "fotografija": "",
+    "fotografija": "assets/licnosti/pekic-porodica.jpg",
     "fotografija_groba": "",
     "kategorije": [
       "војна лица"
@@ -764,8 +773,8 @@
     "grobno_mesto": "",
     "lat": 44.629712,
     "lon": 21.179754,
-    "fotografija": "",
-    "fotografija_groba": "",
+    "fotografija": "assets/licnosti/dusan-portret.jpg",
+    "fotografija_groba": "assets/grobna-mesta/dusan-grob.jpg",
     "kategorije": [
       "војна лица"
     ],
