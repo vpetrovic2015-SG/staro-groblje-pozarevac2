@@ -689,9 +689,10 @@
     "fotografija": "assets/licnosti/vlajko-stojiljkovic.jpg",
     "fotografija_groba": "",
     "kategorije": [
-      "istorija",
-      "javne-licnosti"
-    ]
+      "političari"
+    ],
+    "lat": 44.630106,
+    "lon": 21.179619
   },
   {
     "id": "draza-markovic",
