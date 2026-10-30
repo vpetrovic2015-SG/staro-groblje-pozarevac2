@@ -729,11 +729,9 @@
     "lat": 44.629942,
     "lon": 21.179474,
     "fotografija": "",
-    "fotografija_groba": "assets/grobna-mesta/djordje-arandjelovic-grob.jpg",
     "kategorije": [
       "војна лица"
-    ],
-    "model_3d": "assets/3d/djordje-arandjelovic.glb"
+    ]
   },
   {
     "id": "antonije-pekic",
