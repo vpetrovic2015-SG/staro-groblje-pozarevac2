@@ -15,9 +15,9 @@
   <a class="brand" href="#pocetna"><span class="brand-mark">✝</span><span><b>СТАРО ГРОБЉЕ</b><small>ПОЖАРЕВАЦ · Дигитални водич кроз историју</small></span></a>
   <button class="menu-toggle" id="menuToggle" aria-label="Отвори мени">☰</button>
   <nav id="mainNav">
-    <a href="#pocetna">Почетна</a><a href="#licnosti">Личности</a><a href="#mapa">Мапа</a><a href="#rute">Руте</a><a href="#o-groblju">О гробљу</a><a href="#3d-prikaz">3D приказ</a>
+    <a href="#pocetna">Почетна</a><a href="#licnosti">Личности</a><a href="#mapa">Мапа</a><a href="#categoryNav">Категорије</a><a href="#o-groblju">О пројекту</a>
   </nav>
-  <div class="header-tools"><button class="lang active" data-lang="cir">ЋИР</button><button class="lang" data-lang="lat">LAT</button></div>
+  <div class="header-search"><span>⌕</span><input id="headerSearch" type="search" placeholder="Претрага..." aria-label="Претрага личности"></div><div class="header-tools"><button class="lang active" data-lang="cir">ЋИР</button><button class="lang" data-lang="lat">LAT</button></div>
 </header>
 <main>
 <section class="hero" id="pocetna">
@@ -46,7 +46,7 @@
   <div class="catalog-layout">
     <aside class="list-panel">
       <label class="search-label" for="searchInput" data-t="searchLabel">Претрага каталога</label><input id="searchInput" type="search" placeholder="Име, занимање, парцела..." autocomplete="off">
-      <select id="categoryFilter" aria-label="Категорија"><option value="">Све категорије</option></select>
+      <select id="categoryFilter" aria-label="Категорија"><option value="">Све категорије</option></select><div id="categoryNav" class="category-nav" aria-label="Категорије личности"></div>
       <div id="peopleList" class="people-list"><div class="loading">Учитавање каталога…</div></div>
     </aside>
     <article id="profileContent" class="profile-panel"><div class="empty-profile"><span class="empty-icon">✦</span><h3 data-t="choosePerson">Изаберите личност</h3><p data-t="chooseHint">Подаци о личности ће се приказати овде.</p></div></article>
