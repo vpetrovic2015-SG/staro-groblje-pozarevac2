@@ -162,3 +162,18 @@ body.profile-mode .person-row small{display:block;color:#586b88;font-size:12px;l
 @media(max-width:1180px){.reference-media-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.reference-side-column{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr}.reference-image-link,.profile-grave-photo,.reference-model-stage,.profile-model-viewer{height:420px;min-height:420px}}
 @media(max-width:820px){body.profile-mode .catalog-layout{grid-template-columns:1fr}body.profile-mode .list-panel{position:relative;top:auto;height:auto;max-height:260px;border-right:0;border-bottom:1px solid #dce3ed}.reference-profile-heading{grid-template-columns:112px minmax(0,1fr);gap:14px;margin:6px 2px 12px}.reference-portrait{width:112px;height:136px}.reference-title h2{font-size:clamp(24px,6vw,34px)}.reference-job{font-size:18px}.reference-years{font-size:15px}.reference-tabs a{padding:8px 10px;font-size:12px}.reference-media-grid{grid-template-columns:1fr}.reference-side-column{grid-column:auto;grid-template-columns:1fr 1fr}.reference-image-link,.profile-grave-photo,.reference-model-stage,.profile-model-viewer{height:330px;min-height:330px}.reference-map{height:180px}.reference-bio-text{font-size:14px}}
 @media(max-width:520px){body.profile-mode .profile-panel{padding:5px}.reference-profile{padding:4px}.reference-profile-heading{grid-template-columns:92px minmax(0,1fr);gap:10px}.reference-portrait{width:92px;height:116px}.reference-title h2{font-size:23px}.reference-job{font-size:16px}.reference-tabs{gap:5px;margin-top:10px}.reference-tabs a{padding:7px 8px;font-size:11px}.reference-side-column{grid-template-columns:1fr}.reference-image-link,.profile-grave-photo,.reference-model-stage,.profile-model-viewer{height:290px;min-height:290px}}
+
+.header-search{display:flex;align-items:center;gap:9px;min-width:190px;width:min(19vw,250px);height:40px;padding:0 12px;border:1px solid #5f789a;border-radius:8px;background:#17283f;color:#dbe8fa}
+.header-search span{font-size:22px;line-height:1;color:#c7d8ef}
+.header-search input{min-width:0;width:100%;border:0;outline:0;background:transparent;color:#fff;font:16px Georgia,serif}
+.header-search input::placeholder{color:#9fb5d3}
+body.profile-mode .header-search{margin-left:auto}
+body.profile-mode .category-nav{display:flex;flex-direction:column;gap:2px;margin:10px 0 18px}
+body.profile-mode .category-link{display:flex;align-items:center;gap:12px;text-align:left;width:100%;padding:8px 10px;border:0;border-radius:5px;background:transparent;color:#1a2b48;font:14px Georgia,serif;cursor:pointer}
+body.profile-mode .category-link span{width:28px;color:#62758f;font-size:18px}
+body.profile-mode .category-link.active,body.profile-mode .category-link:hover{background:#b9d7fa;color:#12315d}
+body.profile-mode #categoryFilter{display:none}
+body.profile-mode .list-panel:before{content:"Категорије";display:block;font:bold 18px Georgia,serif;color:#10213e;margin:0 0 7px}
+body.profile-mode .search-label{margin-top:8px;display:block}
+@media(max-width:1050px){.topbar nav{gap:12px}.topbar nav a{font-size:12px}.header-search{width:170px;min-width:150px}}
+@media(max-width:760px){.header-search{display:none}.topbar nav{display:none}.topbar nav.open{display:flex;position:absolute;top:76px;left:0;right:0;flex-direction:column;align-items:stretch;padding:14px 20px;background:#0c192b}.brand b{font-size:14px}}
