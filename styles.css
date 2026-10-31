@@ -107,3 +107,58 @@ body{background:#f2f5f9;color:#101d35;font-family:Georgia,'Times New Roman',seri
 .profile-panel{background:#fff}.editorial-profile{background:#fff!important}.editorial-main{background:#fff}.editorial-kicker{color:#6d809c!important}.editorial-main .profile-name{color:#0b1730;font-weight:700}.editorial-subtitle{color:#526c95!important}.editorial-main .profile-tabs{background:#f2f5f9!important;border-color:#dce4ee!important;border-radius:7px;overflow:hidden}.editorial-main .tab{color:#12294b}.editorial-main .tab.active{background:#2672e9!important;color:#fff!important;border-radius:6px}.editorial-main .tab-content{background:#fff}.editorial-main .bio-text{color:#18243a!important;line-height:1.75}.editorial-main .bio-text p{margin:0 0 1.15em}
 .btn.gold,.small-btn{background:#2672e9!important;color:#fff!important;border-color:#2672e9!important}.section-kicker{color:#276ee1}.profile-tabs .tab:hover{color:#1b62c7}
 @media(max-width:850px){.topbar{height:auto;min-height:76px}.brand small{font-size:9px}.catalog-layout{gap:12px}.editorial-main .profile-name{font-size:clamp(28px,7vw,38px)}}
+
+/* Profile view aligned to the approved archival-guide reference */
+body.profile-mode{background:#eef2f7}
+body.profile-mode main>.hero,body.profile-mode main>.intro,body.profile-mode main>.map-section,body.profile-mode main>.routes-section,body.profile-mode main>.model-section,body.profile-mode footer{display:none!important}
+body.profile-mode .people-section{display:block!important;max-width:none;padding:0 0 22px;background:#eef2f7;min-height:calc(100vh - 86px)}
+body.profile-mode .people-section>.section-head{display:none}
+body.profile-mode .catalog-layout{display:grid;grid-template-columns:286px minmax(0,1fr);gap:0;max-width:none;min-height:calc(100vh - 86px);align-items:stretch}
+body.profile-mode .list-panel{border:0;border-right:1px solid #dce3ed;border-radius:0;box-shadow:none;padding:20px 16px;background:#f2f5f9;position:sticky;top:78px;height:calc(100vh - 78px);overflow:auto}
+body.profile-mode .profile-panel{border:0;border-radius:0;box-shadow:none;background:#f2f5f9;padding:10px 8px 18px;min-width:0}
+body.profile-mode .search-label{color:#162541;font-weight:700}
+body.profile-mode #searchInput,body.profile-mode #categoryFilter{width:100%;border:1px solid #d3dce8;background:#fff;border-radius:6px;padding:10px;margin:6px 0 10px;color:#14233e}
+body.profile-mode .people-list{display:flex;flex-direction:column;gap:3px}
+body.profile-mode .person-row{display:flex;align-items:center;gap:12px;width:100%;padding:9px 10px;border:0;border-radius:6px;text-align:left;background:transparent;color:#13233e;cursor:pointer}
+body.profile-mode .person-row:hover,body.profile-mode .person-row.active{background:#b8d5f8!important;color:#10284d!important}
+body.profile-mode .person-row img,body.profile-mode .person-row .no-photo{width:56px;height:62px;object-fit:cover;flex:0 0 56px;border-radius:4px}
+body.profile-mode .person-row strong{display:block;font-family:Georgia,serif;font-size:14px;line-height:1.2}
+body.profile-mode .person-row small{display:block;color:#586b88;font-size:12px;line-height:1.35;margin-top:3px}
+.reference-profile{background:#f2f5f9;min-height:100%;padding:8px 10px;color:#0b1730}
+.reference-profile-heading{display:grid;grid-template-columns:196px minmax(0,1fr);gap:24px;align-items:start;margin:8px 10px 12px}
+.reference-portrait{width:196px;height:204px;border-radius:7px;overflow:hidden;background:#dfe5ed;box-shadow:0 3px 10px #0d1b2c22}
+.reference-portrait img{width:100%;height:100%;object-fit:cover;object-position:center 20%}
+.reference-portrait .portrait-placeholder{height:100%;display:grid;place-items:center}
+.reference-title{padding-top:6px;min-width:0}
+.reference-title h2{font-family:Georgia,'Times New Roman',serif;font-size:clamp(32px,3.1vw,46px);line-height:1.1;margin:2px 0 8px;color:#0a1730}
+.reference-job{font-family:Georgia,serif;font-size:25px;color:#607493;font-weight:700}
+.reference-years{font-family:Georgia,serif;font-size:20px;color:#607493;margin-top:2px}
+.reference-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+.reference-tabs a{padding:10px 18px;background:#e9edf2;color:#122344;border-radius:7px;font-size:14px}
+.reference-tabs a.active,.reference-tabs a:hover{background:#2474eb;color:white}
+.reference-media-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr) minmax(220px,.65fr);gap:10px;align-items:stretch}
+.reference-card{background:#fff;border:1px solid #dce3ed;border-radius:6px;overflow:hidden;box-shadow:0 2px 8px #172b4510;min-width:0}
+.reference-card h3{font-family:Georgia,'Times New Roman',serif;font-size:17px;color:#10213e;margin:0;padding:9px 11px;background:#f7f9fc;border-bottom:1px solid #e2e7ef}
+.reference-image-link{display:block;height:500px;background:#e4e9f0}
+.profile-grave-photo{width:100%;height:100%;min-height:500px;object-fit:cover;display:block}
+.reference-empty-media,.profile-empty-media{min-height:220px;display:grid;place-items:center;text-align:center;padding:20px;color:#64748b;background:#f1f4f8;font-size:14px}
+.reference-model-stage{height:500px;background:radial-gradient(ellipse at center,#41464c 0%,#171a1e 72%);position:relative}
+.profile-model-viewer{display:block;width:100%;height:100%;min-height:500px;background:transparent;--poster-color:transparent;--progress-bar-color:#2878ed}
+.reference-model-hint{font-size:11px;color:#65738a;padding:7px 10px;background:#f8fafc}
+.reference-side-column{display:flex;flex-direction:column;gap:10px;min-width:0}
+.reference-map{height:220px;background:#e7ecf2;display:grid;place-items:center;color:#64748b;font-size:13px}
+.reference-coords{font-family:Georgia,serif;padding:7px 10px;color:#233b5d;font-size:13px}
+.reference-map-link{display:block;margin:0 8px 8px;padding:9px 12px;text-align:center;background:#2474eb;color:white;border-radius:5px;font-size:13px}
+.reference-qr-card{padding-bottom:8px}
+.reference-qr{display:flex;justify-content:center;padding:10px 8px 0;min-height:126px}
+.reference-qr img,.reference-qr canvas{max-width:116px;max-height:116px}
+.reference-qr-card p{text-align:center;font-family:Georgia,serif;font-size:12px;line-height:1.35;color:#30415d;padding:0 10px;margin:5px 0}
+.reference-biography{margin-top:10px}
+.reference-biography h3{padding:9px 16px;font-size:19px}
+.reference-bio-text{padding:8px 18px 10px;font-family:Arial,sans-serif;font-size:15px;line-height:1.45;color:#18243b}
+.reference-bio-text p{margin:0 0 7px}
+.reference-sources{border-top:1px solid #e3e8ef;padding:8px 18px;color:#64748b;font-size:11px}
+.reference-profile-actions{display:flex;gap:8px;justify-content:flex-end;padding:10px 0}
+@media(max-width:1180px){.reference-media-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.reference-side-column{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr}.reference-image-link,.profile-grave-photo,.reference-model-stage,.profile-model-viewer{height:420px;min-height:420px}}
+@media(max-width:820px){body.profile-mode .catalog-layout{grid-template-columns:1fr}.body.profile-mode .list-panel{position:relative;top:auto;height:auto;max-height:260px;border-right:0;border-bottom:1px solid #dce3ed}.reference-profile-heading{grid-template-columns:112px minmax(0,1fr);gap:14px;margin:6px 2px 12px}.reference-portrait{width:112px;height:136px}.reference-title h2{font-size:clamp(24px,6vw,34px)}.reference-job{font-size:18px}.reference-years{font-size:15px}.reference-tabs a{padding:8px 10px;font-size:12px}.reference-media-grid{grid-template-columns:1fr}.reference-side-column{grid-column:auto;grid-template-columns:1fr 1fr}.reference-image-link,.profile-grave-photo,.reference-model-stage,.profile-model-viewer{height:330px;min-height:330px}.reference-map{height:180px}.reference-bio-text{font-size:14px}}
+@media(max-width:520px){body.profile-mode .profile-panel{padding:5px}.reference-profile{padding:4px}.reference-profile-heading{grid-template-columns:92px minmax(0,1fr);gap:10px}.reference-portrait{width:92px;height:116px}.reference-title h2{font-size:23px}.reference-job{font-size:16px}.reference-tabs{gap:5px;margin-top:10px}.reference-tabs a{padding:7px 8px;font-size:11px}.reference-side-column{grid-template-columns:1fr}.reference-image-link,.profile-grave-photo,.reference-model-stage,.profile-model-viewer{height:290px;min-height:290px}}
