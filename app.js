@@ -30,12 +30,34 @@ function renderList(){
 }
 function profileUrl(p){const u=new URL(location.href);u.hash="licnost="+encodeURIComponent(p.id);return u.href}
 function showProfile(id){
- const p=people.find(x=>x.id===id);if(!p)return;selectedId=id;renderList();
- const meta=[];if(p.godine)meta.push(`<span class="meta-pill">${escapeHtml(p.godine)}</span>`);if(p.parcela)meta.push(`<span class="meta-pill">${tr("parcel")}: ${escapeHtml(p.parcela)}</span>`);if(p.grobno_mesto)meta.push(`<span class="meta-pill">${tr("graveNo")}: ${escapeHtml(p.grobno_mesto)}</span>`);
+ const p=people.find(x=>x.id===id);if(!p)return;selectedId=id;document.body.classList.add("profile-mode");renderList();
  const mapRoute=(p.lat&&p.lon)?`https://www.google.com/maps/dir/?api=1&destination=${p.lat},${p.lon}`:"";
- $("profileContent").innerHTML=`<div class="editorial-profile"><aside class="editorial-aside"><div class="editorial-photo-frame">${p.fotografija?`<img class="profile-portrait" src="${escapeAttr(assetUrl(p.fotografija))}" alt="${escapeAttr(nameOf(p))}">`:`<div class="portrait-placeholder">✦</div>`}</div><div class="editorial-caption">${escapeHtml(nameOf(p))}</div><div class="editorial-years">${escapeHtml(p.godine||"")}</div><div class="editorial-role">${escapeHtml(jobOf(p)||"")}</div><div class="profile-actions">${mapRoute?`<a class="small-btn" target="_blank" rel="noopener" href="${mapRoute}">↗ ${tr("openRoute")}</a>`:""}<button class="small-btn" id="copyProfile">⧉ ${tr("share")}</button></div></aside><div class="editorial-main"><div class="editorial-kicker">СТАРО ГРОБЉЕ · ПОЖАРЕВАЦ</div><h2 class="profile-name">${escapeHtml(nameOf(p))}</h2><div class="editorial-subtitle">${escapeHtml(p.podnaslov||jobOf(p)||"")}</div><div class="profile-meta">${meta.join("")}</div><div class="profile-tabs" role="tablist"><button class="tab active" data-tab="bio">${tr("bio")}</button><button class="tab" data-tab="photos">${tr("photos")}</button><button class="tab" data-tab="grave">${tr("grave")}</button><button class="tab" data-tab="model">${tr("model")}</button><button class="tab" data-tab="qr">${tr("qr")}</button></div><div class="tab-content" id="tabContent">${bioPanel(p)}</div></div></div>`;
- $("profileContent").querySelectorAll("[data-tab]").forEach(b=>b.addEventListener("click",()=>activateTab(p,b.dataset.tab)));
- $("copyProfile").addEventListener("click",async()=>{try{await navigator.clipboard.writeText(profileUrl(p));$("copyProfile").textContent="✓ "+tr("copyDone")}catch(e){prompt("Копирајте линк профила:",profileUrl(p))}});
+ const coords=(p.lat&&p.lon)?`${Number(p.lat).toFixed(6)}, ${Number(p.lon).toFixed(6)}`:"";
+ const profilePhoto=p.fotografija? `<img class="profile-portrait" src="${escapeAttr(assetUrl(p.fotografija))}" alt="${escapeAttr(nameOf(p))}" onerror="this.style.display='none'">`:`<div class="portrait-placeholder">✦</div>`;
+ const gravePhoto=p.fotografija_groba?`<img class="profile-grave-photo" src="${escapeAttr(assetUrl(p.fotografija_groba))}" alt="Фотографија гробног места" onerror="this.outerHTML='<div class=&quot;profile-empty-media&quot;>Фотографија гробног места није доступна</div>'">`:`<div class="profile-empty-media">Фотографија гробног места није унета</div>`;
+ const model=p.model_3d?`<model-viewer class="profile-model-viewer" src="${escapeAttr(assetUrl(p.model_3d))}" camera-controls auto-rotate shadow-intensity="1" exposure="1" environment-image="neutral" alt="3D приказ гробног места">`:`<div class="profile-empty-media">3D модел за ову личност није доступан</div>`;
+ const meta=[p.godine, p.zanimanje||""].filter(Boolean);
+ $("profileContent").innerHTML=`<div class="reference-profile">
+  <div class="reference-profile-heading">
+   <div class="reference-portrait">${profilePhoto}</div>
+   <div class="reference-title"><h2>${escapeHtml(nameOf(p))}</h2><div class="reference-job">${escapeHtml(jobOf(p)||"")}</div><div class="reference-years">${escapeHtml(p.godine||"")}</div>
+    <nav class="reference-tabs"><a class="active" href="#profileTop">Почетна</a><a href="#profileBiography">Биографија</a><a href="#profileGrave">Гробно место</a><a href="#profile3d">3D приказ</a><a href="#profileMapCard">Карта</a></nav>
+   </div>
+  </div>
+  <div class="reference-media-grid" id="profileTop">
+   <section class="reference-card reference-grave" id="profileGrave"><h3>Фотографија гробног места</h3><a class="reference-image-link" href="${p.fotografija_groba?escapeAttr(assetUrl(p.fotografija_groba)):"#"}" target="_blank" rel="noopener">${gravePhoto}</a></section>
+   <section class="reference-card reference-3d" id="profile3d"><h3>3D приказ гробног места</h3><div class="reference-model-stage">${model}</div><div class="reference-model-hint">Превуците мишем или прстом за окретање · точкић / два прста за увећање</div></section>
+   <div class="reference-side-column">
+    <section class="reference-card reference-map-card" id="profileMapCard"><h3>Локација на мапи</h3><div id="profileMap" class="reference-map">${coords?"":"Координате нису унете за ову личност."}</div>${coords?`<div class="reference-coords">⌖ ${coords}</div><a class="reference-map-link" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=${p.lat},${p.lon}">↗ Отвори у Google Maps</a>`:""}</section>
+    <section class="reference-card reference-qr-card"><h3>QR код</h3><div id="profileQr" class="reference-qr"></div><p>Скенирајте QR код да отворите ову страницу на мобилном уређају.</p></section>
+   </div>
+  </div>
+  <section class="reference-card reference-biography" id="profileBiography"><h3>Биографија</h3><div class="reference-bio-text">${(bioOf(p)||tr("noBio")).split(/\\n\\s*\\n/).map(x=>`<p>${escapeHtml(x)}</p>`).join("")}</div>${p.izvori?`<div class="reference-sources">${escapeHtml(p.izvori)}</div>`:""}</section>
+  <div class="reference-profile-actions"><button class="small-btn" id="copyProfile">⧉ ${tr("share")}</button>${mapRoute?`<a class="small-btn" href="${mapRoute}" target="_blank" rel="noopener">↗ ${tr("openRoute")}</a>`:""}</div>
+ </div>`;
+ const qr=$("profileQr");if(window.QRCode&&qr)new QRCode(qr,{text:profileUrl(p),width:116,height:116,colorDark:"#050505",colorLight:"#ffffff",correctLevel:QRCode.CorrectLevel.M});
+ if(p.lat&&p.lon&&window.L){const pm=L.map("profileMap",{scrollWheelZoom:false,zoomControl:true}).setView([Number(p.lat),Number(p.lon)],18);L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:20,attribution:"&copy; OpenStreetMap"}).addTo(pm);L.marker([Number(p.lat),Number(p.lon)]).addTo(pm).bindPopup(escapeHtml(nameOf(p))).openPopup();setTimeout(()=>pm.invalidateSize(),120);}
+ const cp=$("copyProfile");if(cp)cp.addEventListener("click",async()=>{try{await navigator.clipboard.writeText(profileUrl(p));cp.textContent="✓ "+tr("copyDone")}catch(e){prompt("Копирајте линк профила:",profileUrl(p))}});
  history.replaceState(null,"",`#licnost=${encodeURIComponent(id)}`);
 }
 function bioPanel(p){const paragraphs=(bioOf(p)||tr("noBio")).split(/\n\s*\n/).map(x=>`<p>${escapeHtml(x).replace(/\n/g," ")}</p>`).join("");return `<h3>${tr("bio")}</h3><div class="bio-text">${paragraphs}</div>${p.izvori?`<p class="map-note">${escapeHtml(p.izvori)}</p>`:""}`}
