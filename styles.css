@@ -94,3 +94,16 @@
 .editorial-main .tab-content h3{font-size:23px}
 .editorial-main .bio-text{font-family:'Cormorant Garamond',Georgia,serif;font-size:17px;line-height:1.78;text-align:justify;color:#29251f}
 @media(max-width:850px){.editorial-main .profile-name{font-size:36px}.editorial-main .bio-text{font-size:16px}.editorial-main .profile-tabs{flex-wrap:wrap}}
+
+/* Reference design: navy archival catalogue */
+:root{--ink:#0b1730;--ink2:#152440;--gold:#286fe8;--gold2:#74a8f8;--paper:#f0f3f8;--muted:#5d6d87;--line:#dbe2ec;--white:#fff;--shadow:0 8px 26px #12294b14}
+body{background:#f2f5f9;color:#101d35;font-family:Georgia,'Times New Roman',serif}
+.topbar{background:linear-gradient(90deg,#091323,#14243a 58%,#0a1424);color:#f8fbff;border-bottom:2px solid #2c71e9;box-shadow:0 4px 16px #08152b25}
+.brand-mark{color:#fff;font-size:40px}.brand b{font-size:17px;letter-spacing:.035em}.brand small{color:#a9c5ef;font-size:10px;letter-spacing:.025em}
+.topbar nav a{color:#f1f5fb;font-weight:600;font-size:14px}.topbar nav a:hover{color:#86b5ff}
+.lang{border-color:#506888;color:#dce8f8;border-radius:6px;padding:7px 12px}.lang.active{background:#2474eb;color:white;border-color:#2474eb}
+.section{max-width:1600px}.people-section{background:#f4f6fa}.catalog-layout{gap:14px;align-items:start}.list-panel,.profile-panel{background:#fff;border:1px solid #dce4ef;box-shadow:0 4px 18px #1b315111;border-radius:7px}
+.list-panel{background:#f2f5f9}.people-list{background:transparent}.person-item{border-color:#dfe6ef}.person-item:hover,.person-item.active,.person-item.selected{background:#c1dafa!important;color:#0d2750!important}
+.profile-panel{background:#fff}.editorial-profile{background:#fff!important}.editorial-main{background:#fff}.editorial-kicker{color:#6d809c!important}.editorial-main .profile-name{color:#0b1730;font-weight:700}.editorial-subtitle{color:#526c95!important}.editorial-main .profile-tabs{background:#f2f5f9!important;border-color:#dce4ee!important;border-radius:7px;overflow:hidden}.editorial-main .tab{color:#12294b}.editorial-main .tab.active{background:#2672e9!important;color:#fff!important;border-radius:6px}.editorial-main .tab-content{background:#fff}.editorial-main .bio-text{color:#18243a!important;line-height:1.75}.editorial-main .bio-text p{margin:0 0 1.15em}
+.btn.gold,.small-btn{background:#2672e9!important;color:#fff!important;border-color:#2672e9!important}.section-kicker{color:#276ee1}.profile-tabs .tab:hover{color:#1b62c7}
+@media(max-width:850px){.topbar{height:auto;min-height:76px}.brand small{font-size:9px}.catalog-layout{gap:12px}.editorial-main .profile-name{font-size:clamp(28px,7vw,38px)}}
