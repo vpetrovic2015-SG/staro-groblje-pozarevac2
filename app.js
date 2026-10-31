@@ -35,7 +35,7 @@ function showProfile(id){
  const coords=(p.lat&&p.lon)?`${Number(p.lat).toFixed(6)}, ${Number(p.lon).toFixed(6)}`:"";
  const profilePhoto=p.fotografija? `<img class="profile-portrait" src="${escapeAttr(assetUrl(p.fotografija))}" alt="${escapeAttr(nameOf(p))}" onerror="this.style.display='none'">`:`<div class="portrait-placeholder">✦</div>`;
  const gravePhoto=p.fotografija_groba?`<img class="profile-grave-photo" src="${escapeAttr(assetUrl(p.fotografija_groba))}" alt="Фотографија гробног места" onerror="this.outerHTML='<div class=&quot;profile-empty-media&quot;>Фотографија гробног места није доступна</div>'">`:`<div class="profile-empty-media">Фотографија гробног места није унета</div>`;
- const model=p.model_3d?`<model-viewer class="profile-model-viewer" src="${escapeAttr(assetUrl(p.model_3d))}" camera-controls auto-rotate shadow-intensity="1" exposure="1" environment-image="neutral" alt="3D приказ гробног места">`:`<div class="profile-empty-media">3D модел за ову личност није доступан</div>`;
+ const model=p.model_3d?`<model-viewer class="profile-model-viewer" src="${escapeAttr(assetUrl(p.model_3d))}" camera-controls auto-rotate shadow-intensity="1" exposure="1" environment-image="neutral" alt="3D приказ гробног места"></model-viewer>`:`<div class="profile-empty-media">3D модел за ову личност није доступан</div>`;
  const meta=[p.godine, p.zanimanje||""].filter(Boolean);
  $("profileContent").innerHTML=`<div class="reference-profile">
   <div class="reference-profile-heading">
@@ -52,7 +52,7 @@ function showProfile(id){
     <section class="reference-card reference-qr-card"><h3>QR код</h3><div id="profileQr" class="reference-qr"></div><p>Скенирајте QR код да отворите ову страницу на мобилном уређају.</p></section>
    </div>
   </div>
-  <section class="reference-card reference-biography" id="profileBiography"><h3>Биографија</h3><div class="reference-bio-text">${(bioOf(p)||tr("noBio")).split(/\\n\\s*\\n/).map(x=>`<p>${escapeHtml(x)}</p>`).join("")}</div>${p.izvori?`<div class="reference-sources">${escapeHtml(p.izvori)}</div>`:""}</section>
+  <section class="reference-card reference-biography" id="profileBiography"><h3>Биографија</h3><div class="reference-bio-text">${(bioOf(p)||tr("noBio")).split(/\n\s*\n/).map(x=>`<p>${escapeHtml(x)}</p>`).join("")}</div>${p.izvori?`<div class="reference-sources">${escapeHtml(p.izvori)}</div>`:""}</section>
   <div class="reference-profile-actions"><button class="small-btn" id="copyProfile">⧉ ${tr("share")}</button>${mapRoute?`<a class="small-btn" href="${mapRoute}" target="_blank" rel="noopener">↗ ${tr("openRoute")}</a>`:""}</div>
  </div>`;
  const qr=$("profileQr");if(window.QRCode&&qr)new QRCode(qr,{text:profileUrl(p),width:116,height:116,colorDark:"#050505",colorLight:"#ffffff",correctLevel:QRCode.CorrectLevel.M});
