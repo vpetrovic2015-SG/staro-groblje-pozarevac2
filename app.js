@@ -93,6 +93,9 @@ function initMap(){
 function refreshMapPopups(){if(!mapInstance)return;mapMarkers.forEach(({id,marker})=>{const p=people.find(x=>x.id===id);if(p)marker.setPopupContent(`<b>${escapeHtml(nameOf(p))}</b><br><a href="#licnost=${encodeURIComponent(p.id)}" data-map-person="${escapeAttr(p.id)}">${tr("mapPopup")}</a>`)})}
 function fillCategories(){
  const cats=[...new Set(people.flatMap(p=>p.kategorije||[]))].sort();$("categoryFilter").innerHTML=`<option value="">${tr("allCategories")}</option>`+cats.map(c=>`<option value="${escapeAttr(c)}">${escapeHtml(categoryName(c))}</option>`).join("");
+ const icons={oficiri:"⚔",politicari:"♟",lekari:"✚",dobrotvori:"♡",umetnici:"✎",prosveta:"▣",prosvetni:"▣",privrednici:"▤",advokati:"⚖",istorija:"◷","javne-licnosti":"♙"};
+ $("categoryNav").innerHTML=`<button class="category-link active" data-category=""><span>♟</span>${tr("allCategories")}</button>`+cats.map(c=>`<button class="category-link" data-category="${escapeAttr(c)}"><span>${icons[c]||"✦"}</span>${escapeHtml(categoryName(c))}</button>`).join("");
+ $("categoryNav").querySelectorAll("[data-category]").forEach(b=>b.addEventListener("click",()=>{$("categoryFilter").value=b.dataset.category;$("categoryNav").querySelectorAll(".category-link").forEach(x=>x.classList.toggle("active",x===b));renderList()}));
 }
 function renderModelOverview(){
  const withModels=people.filter(p=>p.model_3d);
@@ -129,7 +132,7 @@ function setStudioModel(id){
 }
 async function start(){
  try{const res=await fetch(DATA_URL);if(!res.ok)throw new Error("HTTP "+res.status);people=await res.json();fillCategories();renderList();initMap();renderModelOverview();
-  $("searchInput").addEventListener("input",renderList);$("categoryFilter").addEventListener("change",renderList);
+  $("searchInput").addEventListener("input",()=>{if($("headerSearch"))$("headerSearch").value=$("searchInput").value;renderList()});$("categoryFilter").addEventListener("change",renderList);if($("headerSearch"))$("headerSearch").addEventListener("input",()=>{$("searchInput").value=$("headerSearch").value;renderList()});
   document.querySelectorAll("[data-lang]").forEach(b=>b.addEventListener("click",()=>{setLanguage(b.dataset.lang);fillCategories()}));
   $("menuToggle").addEventListener("click",()=>$("mainNav").classList.toggle("open"));
   $("mainNav").querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>$("mainNav").classList.remove("open")));
